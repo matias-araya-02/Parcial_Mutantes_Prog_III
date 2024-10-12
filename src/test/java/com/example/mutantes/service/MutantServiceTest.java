@@ -23,24 +23,24 @@ public class MutantServiceTest {
 
     @BeforeEach
     public void setUp() {
-        MockitoAnnotations.openMocks(this);  // Inicializa los mocks
+        MockitoAnnotations.openMocks(this);
     }
 
     @Test
     public void testIsMutant() {
         String[] dna = { "AAAA", "AAAA", "AAAA", "AAAA" };
 
-        when(dnaRepository.findByDna(any(String.class))).thenReturn(null); // No existe en la base de datos
+        when(dnaRepository.findByDna(any(String.class))).thenReturn(null);
         when(dnaRepository.saveAndFlush(any(Dna.class))).thenAnswer(invocation -> {
             Dna savedDna = invocation.getArgument(0);
-            savedDna.setId(1L);  // Simular un ID generado
+            savedDna.setId(1L);
             return savedDna;
         });
 
         Mono<Boolean> result = mutantService.isMutant(dna);
-        Boolean isMutant = result.block();  // Bloquea y obtiene el resultado
-        assertNotNull(isMutant);  // Asegúrate de que no es null
-        assertTrue(isMutant);  // Verifica que sea verdadero
+        Boolean isMutant = result.block();
+        assertNotNull(isMutant);
+        assertTrue(isMutant);
         verify(dnaRepository).saveAndFlush(any(Dna.class));
     }
 

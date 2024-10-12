@@ -45,7 +45,7 @@ Antes de realizar la detección, se llevan a cabo varias validaciones en la entr
 ## Pruebas Postman 
 
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Postman_%28software%29.png" alt="Postman Logo" width="500"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Postman_%28software%29.png" alt="Postman Logo" width="400"/>
 </p>
 
 
@@ -176,7 +176,7 @@ Response Body:
 ## 🗄️ Base de Datos H2
 
 <p align="center">
-  <img src="https://dbdb.io/media/logos/h2-logo.svg" alt="H2 Logo" width="200"/>
+  <img src="https://dbdb.io/media/logos/h2-logo.svg" alt="H2 Logo" width="150"/>
 </p>
 
 ### Función de la Base de Datos H2 en el Proyecto
@@ -203,9 +203,8 @@ La tabla `Dna` tiene las siguientes columnas:
 ## Testing ✅
 
 <p align="center">
-  <img src="https://static.vecteezy.com/system/resources/thumbnails/011/858/556/small_2x/green-check-mark-icon-with-circle-tick-box-check-list-circle-frame-checkbox-symbol-sign-png.png" alt="Green Check Mark Icon" width="300" />
+  <img src="https://static.vecteezy.com/system/resources/thumbnails/011/858/556/small_2x/green-check-mark-icon-with-circle-tick-box-check-list-circle-frame-checkbox-symbol-sign-png.png" alt="Green Check Mark Icon" width="250" />
 </p>
-
 
 ### ✅ Casos de Prueba
 

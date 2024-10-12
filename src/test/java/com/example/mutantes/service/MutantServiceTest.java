@@ -38,12 +38,12 @@ public class MutantServiceTest {
         });
 
         Mono<Boolean> result = mutantService.isMutant(dna);
-        assertTrue(result.block());  // Se espera que sea un mutante
+        Boolean isMutant = result.block();  // Bloquea y obtiene el resultado
+        assertNotNull(isMutant);  // Asegúrate de que no es null
+        assertTrue(isMutant);  // Verifica que sea verdadero
         verify(dnaRepository).saveAndFlush(any(Dna.class));
     }
 
-    //Tome parte de sus test profesor para corroborar que también pasan correctante en este proyecto.
-    // ====================================================================================================
     // Tests cubriendo todas las secuencias de matriz 6x6
     @Test
     public void testRows() {
@@ -55,7 +55,9 @@ public class MutantServiceTest {
                 "GTAGTC",
                 "AGTCAC"
         };
-        assertTrue(mutantService.isMutant(dna).block());
+        Boolean isMutant = mutantService.isMutant(dna).block();
+        assertNotNull(isMutant);
+        assertTrue(isMutant);
     }
 
     @Test
@@ -68,7 +70,9 @@ public class MutantServiceTest {
                 "GTAGTC",
                 "GGTCAC"
         };
-        assertTrue(mutantService.isMutant(dna).block());
+        Boolean isMutant = mutantService.isMutant(dna).block();
+        assertNotNull(isMutant);
+        assertTrue(isMutant);
     }
 
     @Test
@@ -81,7 +85,9 @@ public class MutantServiceTest {
                 "GTAGTC",
                 "AGTCAA"
         };
-        assertTrue(mutantService.isMutant(dna).block());
+        Boolean isMutant = mutantService.isMutant(dna).block();
+        assertNotNull(isMutant);
+        assertTrue(isMutant);
     }
 
     @Test
@@ -94,7 +100,9 @@ public class MutantServiceTest {
                 "GTAGTC",
                 "AGTCAA"
         };
-        assertTrue(mutantService.isMutant(dna).block());
+        Boolean isMutant = mutantService.isMutant(dna).block();
+        assertNotNull(isMutant);
+        assertTrue(isMutant);
     }
 
     @Test
@@ -107,7 +115,9 @@ public class MutantServiceTest {
                 "GTAGTC",
                 "AGTCAA"
         };
-        assertTrue(mutantService.isMutant(dna).block());
+        Boolean isMutant = mutantService.isMutant(dna).block();
+        assertNotNull(isMutant);
+        assertTrue(isMutant);
     }
 
     @Test
@@ -120,7 +130,9 @@ public class MutantServiceTest {
                 "GGCGTC",
                 "AGTCAA"
         };
-        assertTrue(mutantService.isMutant(dna).block());
+        Boolean isMutant = mutantService.isMutant(dna).block();
+        assertNotNull(isMutant);
+        assertTrue(isMutant);
     }
 
     @Test
@@ -133,7 +145,9 @@ public class MutantServiceTest {
                 "GGAGTC",
                 "AGGCAA"
         };
-        assertTrue(mutantService.isMutant(dna).block());
+        Boolean isMutant = mutantService.isMutant(dna).block();
+        assertNotNull(isMutant);
+        assertTrue(isMutant);
     }
 
     @Test
@@ -146,10 +160,11 @@ public class MutantServiceTest {
                 "GGATTC",
                 "AGGCAA"
         };
-        assertFalse(mutantService.isMutant(dna).block());
+        Boolean isMutant = mutantService.isMutant(dna).block();
+        assertNotNull(isMutant);
+        assertFalse(isMutant);
     }
 
-    // ====================================================================================================
     // Tests brindados por el profesor
     @Test
     public void testMutant1() {
@@ -159,7 +174,9 @@ public class MutantServiceTest {
                 "TCAG",
                 "GGTC"
         };
-        assertTrue(mutantService.isMutant(dna).block());
+        Boolean isMutant = mutantService.isMutant(dna).block();
+        assertNotNull(isMutant);
+        assertTrue(isMutant);
     }
 
     @Test
@@ -170,7 +187,9 @@ public class MutantServiceTest {
                 "AAAC",
                 "CGGG"
         };
-        assertFalse(mutantService.isMutant(dna).block());
+        Boolean isMutant = mutantService.isMutant(dna).block();
+        assertNotNull(isMutant);
+        assertFalse(isMutant);
     }
 
     @Test
@@ -181,7 +200,9 @@ public class MutantServiceTest {
                 "TGAC",
                 "GGTC"
         };
-        assertTrue(mutantService.isMutant(dna).block());
+        Boolean isMutant = mutantService.isMutant(dna).block();
+        assertNotNull(isMutant);
+        assertTrue(isMutant);
     }
 
     @Test
@@ -192,7 +213,9 @@ public class MutantServiceTest {
                 "AAAA",
                 "AAAA"
         };
-        assertTrue(mutantService.isMutant(dna).block());
+        Boolean isMutant = mutantService.isMutant(dna).block();
+        assertNotNull(isMutant);
+        assertTrue(isMutant);
     }
 
     @Test
@@ -203,7 +226,9 @@ public class MutantServiceTest {
                 "TAAG",
                 "GGTC"
         };
-        assertFalse(mutantService.isMutant(dna).block());
+        Boolean isMutant = mutantService.isMutant(dna).block();
+        assertNotNull(isMutant);
+        assertFalse(isMutant);
     }
 
     @Test
@@ -219,7 +244,9 @@ public class MutantServiceTest {
                 "ACTACGACC",
                 "TGAGTATCC"
         };
-        assertTrue(mutantService.isMutant(dna).block());
+        Boolean isMutant = mutantService.isMutant(dna).block();
+        assertNotNull(isMutant);
+        assertTrue(isMutant);
     }
 
     @Test
@@ -235,7 +262,8 @@ public class MutantServiceTest {
                 "CAAAGGCAT",
                 "GCAGTCCCC"
         };
-        assertTrue(mutantService.isMutant(dna).block());
+        Boolean isMutant = mutantService.isMutant(dna).block();
+        assertNotNull(isMutant);
+        assertTrue(isMutant);
     }
-
 }

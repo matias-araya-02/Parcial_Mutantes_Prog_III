@@ -12,7 +12,7 @@ COPY . .
 RUN chmod +x ./gradlew
 RUN ./gradlew bootJar --no-daemon
 
-Runtime stage
+#Runtime stage
 FROM openjdk:17-alpine
 EXPOSE 8080
 COPY --from=build /build/libs/*.jar /app.jar

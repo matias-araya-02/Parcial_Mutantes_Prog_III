@@ -267,6 +267,7 @@ public class MutantServiceTest {
         assertTrue(isMutant);
     }
 
+    //Manejo de Errores
     @Test
     public void testEmptyDna() {
         String[] dna = {};
@@ -280,6 +281,14 @@ public class MutantServiceTest {
         Mono<Boolean> result = mutantService.isMutant(dna); //Simplemente me recomienda cambiar el resultado de "dna" a "null" ya que se puede pasar como resultado
         assertFalse(result.blockOptional().orElse(false));
     }
+
+    @Test
+    public void testAllNullDna() {
+        String[] dna = {null, null, null, null};  // ADN con todos los valores nulos
+        Mono<Boolean> result = mutantService.isMutant(dna);
+        assertFalse(result.blockOptional().orElse(false));
+    }
+
 
     @Test
     public void testInvalidCharacters() {
@@ -307,6 +316,4 @@ public class MutantServiceTest {
         Mono<Boolean> result = mutantService.isMutant(dna);
         assertFalse(result.blockOptional().orElse(false));
     }
-
-
 }

@@ -40,10 +40,6 @@ Antes de realizar la detección, se llevan a cabo varias validaciones en la entr
 - **H2** *(Base de datos embebida)*
 - **Postman** *(Cliente para pruebas de API)*
 - **JUnit** *(Pruebas unitarias)*
-- **JMeter** *(Pruebas de estrés y performance)*
-- **Render** *(Despliegue en la nube de la API)*
-- **Docker Desktop** *(Deploy contenedor)*
-- **Swagger** *(Documentación interactiva de APIs)*
 
 
 ## Pruebas Postman 
@@ -202,6 +198,136 @@ La tabla `Dna` tiene las siguientes columnas:
 - **ACUMULAR**: Ayuda a llevar un registro del número de veces que se ha procesado la misma secuencia, lo que permite mejorar la eficiencia y la respuesta del servicio.
 - **ADN**: Almacena la secuencia para permitir su posterior análisis y consultas.
 - **ES_MUTANTE**: Permite clasificar rápidamente las secuencias analizadas y obtener estadísticas.
+
+
+## Testing ✅
+
+<p align="center">
+  <img src="https://static.vecteezy.com/system/resources/thumbnails/011/858/556/small_2x/green-check-mark-icon-with-circle-tick-box-check-list-circle-frame-checkbox-symbol-sign-png.png" alt="Green Check Mark Icon" width="300" />
+</p>
+
+
+### ✅ Casos de Prueba
+
+- `testMutant1`: Verifica que una secuencia de ADN con múltiples secuencias repetitivas sea detectada como mutante.
+- `testMutant2`: Verifica otro caso de secuencia de ADN mutante.
+- `testMutant3`: Verifica un caso extremo donde todas las filas contienen la misma base nitrogenada.
+- `testNonMutant1`: Verifica que una secuencia de ADN sin suficientes secuencias repetitivas no sea detectada como mutante.
+- `testNonMutant2`: Verifica otro caso de secuencia de ADN no mutante.
+- `testMutant4`: Verifica un caso más complejo de secuencia de ADN mutante.
+- `testMutant5`: Verifica un caso adicional de secuencia de ADN mutante.
+
+### ⚠️ Manejo de Errores
+
+- `testEmptyDna`: Verifica que se maneje correctamente una secuencia de ADN vacía.
+- `testNullDna`: Verifica que se maneje correctamente una secuencia de ADN nula.
+- `testAllNullDna`: Verifica que se maneje correctamente una secuencia de ADN con todos los valores nulos.
+- `testInvalidCharacters`: Verifica que se manejen correctamente los caracteres inválidos en la secuencia de ADN.
+- `testNotNxNMatrix`: Verifica que se maneje correctamente una secuencia de ADN que no es una matriz cuadrada.
+
+### 🔍 Otros Casos de Prueba
+
+- `testRows`: Verifica una secuencia de ADN donde se encuentran secuencias repetitivas en las filas.
+- `testColumns`: Verifica una secuencia de ADN donde se encuentran secuencias repetitivas en las columnas.
+- `testMainDiagonals`: Verifica una secuencia de ADN donde se encuentran secuencias repetitivas en las diagonales principales.
+- `testSecondaryLeftDiagonals`: Verifica una secuencia de ADN donde se encuentran secuencias repetitivas en las diagonales secundarias izquierda.
+- `testSecondaryRightDiagonals`: Verifica una secuencia de ADN donde se encuentran secuencias repetitivas en las diagonales secundarias derecha.
+- `testTertiaryLeftDiagonals`: Verifica una secuencia de ADN donde se encuentran secuencias repetitivas en las diagonales terciarias izquierda.
+- `testTertiaryRightDiagonals`: Verifica una secuencia de ADN donde se encuentran secuencias repetitivas en las diagonales terciarias derecha.
+- `testNonMutant`: Verifica que una secuencia de ADN no mutante sea correctamente identificada.
+
+
+
+## 🧬 Pruebas unitarias
+- **Mutante 1**
+```json
+{
+    "dna": [
+      "AAAA",
+      "CCCC",
+      "TCAG",
+      "GGTC"
+    ]
+}
+```
+- **Mutante 2**
+```json
+{
+    "dna": [
+      "TGAC",
+      "AGCC",
+      "TGAC",
+      "GGTC"
+    ]
+}
+```
+- **Mutante 3**
+```json
+{
+    "dna": [
+      "AAAA",
+      "AAAA",
+      "AAAA",
+      "AAAA"
+    ]
+}
+```
+- **Mutante 4**
+```json
+{
+    "dna": [
+      "TCGGGTGAT",
+      "TGATCCTTT",
+      "TACGAGTGA",
+      "AAATGTACG",
+      "ACGAGTGCT",
+      "AGACACATG",
+      "GAATTCCAA",
+      "ACTACGACC",
+      "TGAGTATCC"
+    ]
+}
+```
+- **Mutante 5**
+```json
+{
+    "dna": [
+      "TTTTTTTTT",
+      "TTTTTTTTT",
+      "TTTTTTTTT",
+      "TTTTTTTTT",
+      "CCGACCAGT",
+      "GGCACTCCA",
+      "AGGACACTA",
+      "CAAAGGCAT",
+      "GCAGTCCCC"
+    ]
+}
+```
+
+- **Humano 1**
+```json
+{
+    "dna": [
+      "AAAT",
+      "AACC",
+      "AAAC",
+      "CGGG"
+    ]
+}
+```
+
+- **Humano 2**
+```json
+{
+    "dna": [
+      "TGAC",
+      "ATCC",
+      "TAAG",
+      "GGTC"
+    ]
+}
+```
 
 
 

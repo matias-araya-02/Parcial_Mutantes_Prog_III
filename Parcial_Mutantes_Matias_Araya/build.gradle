@@ -1,0 +1,60 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.4'
+    id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17) // Usar Java 17
+    }
+}
+
+repositories {
+    mavenCentral() // Repositorio de Maven para buscar dependencias
+}
+
+dependencies {
+    //WebFlux
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+    //JPA
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    //(MVC)
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    //H2
+    runtimeOnly 'com.h2database:h2'
+
+    //Lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    //Validación de Java Bean
+    implementation 'javax.validation:validation-api:2.0.1.Final'
+    implementation 'org.hibernate.validator:hibernate-validator:6.1.5.Final'
+    implementation 'org.glassfish:javax.el:3.0.0'
+
+    //Testing
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
+    testImplementation 'io.projectreactor:reactor-test'
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform() // Configura JUnit para usar el nuevo sistema de pruebas
+}
+
+tasks.jar {
+    enabled= true // Habilitar la tarea de creación de jar
+}
+
+bootJar {
+    enabled = true // Habilitar la tarea de creación de boot jar
+}

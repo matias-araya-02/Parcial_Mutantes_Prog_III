@@ -32,11 +32,11 @@ public class MutantController {
                     ResponseMessage responseMessage;
                     if (isMutant) {
                         log.info("ADN mutante detectado");
-                        responseMessage = new ResponseMessage("Mutante >:)", 1); // 1 para mutante
+                        responseMessage = new ResponseMessage("Mutante \uD83D\uDC7D✌", 1); // 1 para mutante
                         return Mono.just(new ResponseEntity<>(responseMessage, HttpStatus.OK));
                     } else {
                         log.info("ADN humano detectado");
-                        responseMessage = new ResponseMessage("Humano ;)", 0); // 0 para humano
+                        responseMessage = new ResponseMessage("Humano \uD83D\uDE09\uD83D\uDC4D", 0); // 0 para humano
                         return Mono.just(new ResponseEntity<>(responseMessage, HttpStatus.FORBIDDEN));
                     }
                 })

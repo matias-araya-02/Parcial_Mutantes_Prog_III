@@ -266,4 +266,47 @@ public class MutantServiceTest {
         assertNotNull(isMutant);
         assertTrue(isMutant);
     }
+
+    @Test
+    public void testEmptyDna() {
+        String[] dna = {};
+        Mono<Boolean> result = mutantService.isMutant(dna);
+        assertFalse(result.blockOptional().orElse(false));
+    }
+
+    @Test
+    public void testNullDna() {
+        String[] dna = null;
+        Mono<Boolean> result = mutantService.isMutant(dna); //Simplemente me recomienda cambiar el resultado de "dna" a "null" ya que se puede pasar como resultado
+        assertFalse(result.blockOptional().orElse(false));
+    }
+
+    @Test
+    public void testInvalidCharacters() {
+        String[] dna = {
+                "ATGCGA",
+                "CAGTGC",
+                "TTATGT",
+                "AGA@GG",  // Carácter inválido
+                "CCCCTA",
+                "TCACTG"
+        };
+        Mono<Boolean> result = mutantService.isMutant(dna);
+        assertFalse(result.blockOptional().orElse(false));
+    }
+
+    @Test
+    public void testNotNxNMatrix() {
+        String[] dna = {
+                "ATGCGA",
+                "CAGT",    //No es una matriz cuadrada (NxN)
+                "TTATGT",
+                "AGAAGG",
+                "CCCCTA"
+        };
+        Mono<Boolean> result = mutantService.isMutant(dna);
+        assertFalse(result.blockOptional().orElse(false));
+    }
+
+
 }

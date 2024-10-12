@@ -2,6 +2,25 @@
 
 Este proyecto es una aplicación Spring Boot que determina si una secuencia de ADN pertenece a un ser humano o a un mutante, utilizando un análisis de las secuencias de ADN en formato de matriz.
 
+## 🖥️ Instalación en local
+
+
+1. Clonar o Descargar Proyecto: [Descargar aquí](https://github.com/matias-araya-02/Parcial_Mutantes_Prog_III/archive/refs/heads/main.zip)
+
+2. Abrir el proyecto en IDE (intelliJ IDEA o el de su preferencia):
+
+3. En caso de no tener H2 Database Engine, descargar e instalar: [Descargar H2 Database Engine](https://github.com/h2database/h2database/releases/download/version-2.3.232/h2-setup-2024-08-11.exe)
+
+4. LEVANTAR H2 con este comando:
+```
+http://localhost:8080/h2-console/
+```
+5. Configurar H2 de la siguiente manera:
+- `Driver Class:` org.h2.Driver
+- `JDBC URL:` jdbc:h2:mem:testdb
+- `User Name:` sa
+- `Password:`
+
 ## 📂 Estructura del Proyecto
 
 - 📄 `src/main/java/com/example/mutantes/MutantApplication.java`: Clase principal que inicia la aplicación Spring Boot.

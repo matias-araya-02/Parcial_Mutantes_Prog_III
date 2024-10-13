@@ -2,7 +2,7 @@
 
 Este proyecto es una aplicación Spring Boot que determina si una secuencia de ADN pertenece a un ser humano o a un mutante, utilizando un análisis de las secuencias de ADN en formato de matriz.
 
-## 🖥️ Instalación en local
+## 🖥️ Instalación Local
 
 
 1. Clonar o Descargar Proyecto: [Descargar aquí](https://github.com/matias-araya-02/Parcial_Mutantes_Prog_III/archive/refs/heads/main.zip)

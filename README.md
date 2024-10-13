@@ -55,14 +55,20 @@ Antes de realizar la detección, se llevan a cabo varias validaciones en la entr
 - Cada fila del array de ADN no puede ser null.
 
 ## 🧰 Tecnologías Implementadas
-- `H2` *(Base de datos en memoria para desarrollo ágil)*
-- `Postman` *(Herramienta para validar y probar API)*
-- `Java 17` *(Lenguaje de programación utilizado)*
-- `JUnit` *(Framework para realizar pruebas unitarias)*
-- `Swagger` *(Interfaz de documentación y pruebas de APIs)*
-- `Spring Boot` *(Framework para construir aplicaciones Java de forma rápida)*
-- `Render` *(Plataforma para desplegar aplicaciones en la nube)*
-- `Gradle` *(Herramienta de automatización de construcción)*
+* [![Java 17](https://img.shields.io/badge/Java_17-007396?style=flat&logo=java&logoColor=white)](https://www.oracle.com/java/) *(Lenguaje de programación utilizado)*
+* [![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat&logo=spring&logoColor=white)](https://spring.io/projects/spring-boot) *(Framework para construir aplicaciones Java de forma rápida)*
+* [![Gradle](https://img.shields.io/badge/Gradle-02303A?style=flat&logo=gradle&logoColor=white)](https://gradle.org/) *(Herramienta de automatización de construcción)*
+* [![Lombok](https://img.shields.io/badge/Lombok-FFA500?style=flat&logo=lombok&logoColor=white)](https://projectlombok.org/) *(Librería para reducir el código boilerplate, como getters, setters y constructores)*
+* [![Mockito](https://img.shields.io/badge/Mockito-47A248?style=flat&logo=mockito&logoColor=white)](https://site.mockito.org/) *(Framework para crear mocks y pruebas unitarias de componentes individuales)*
+* [![Logback](https://img.shields.io/badge/Logback-1D2C4D?style=flat&logo=logback&logoColor=white)](https://logback.qos.ch/) *(Framework para la gestión de logs)*
+* [![JPA](https://img.shields.io/badge/JPA-007396?style=flat&logo=hibernate&logoColor=white)](https://hibernate.org/) *(Java Persistence API para la persistencia y gestión de los datos relacionados con las secuencias de ADN)*
+* [![JUnit](https://img.shields.io/badge/JUnit-25A162?style=flat&logo=junit5&logoColor=white)](https://junit.org/junit5/) *(Framework para realizar pruebas unitarias)*
+* [![H2](https://img.shields.io/badge/H2_Database-000000?style=flat&logo=h2&logoColor=white)](https://www.h2database.com/html/main.html) *(Base de datos en memoria para desarrollo ágil)*
+* [![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat&logo=postman&logoColor=white)](https://www.postman.com/) *(Herramienta para validar y probar API)*
+* [![Render](https://img.shields.io/badge/Render-4D4D4D?style=flat&logo=render&logoColor=white)](https://render.com/) *(Plataforma para desplegar aplicaciones en la nube)*
+* [![Swagger](https://img.shields.io/badge/Swagger-85EA2D?style=flat&logo=swagger&logoColor=black)](https://swagger.io/) *(Interfaz de documentación y pruebas de APIs)*
+
+
 
 ## 🌐 Deploy Render
 <p align="center">

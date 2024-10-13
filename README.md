@@ -54,7 +54,7 @@ Antes de realizar la detección, se llevan a cabo varias validaciones en la entr
 - El array de ADN no puede estar vacío.
 - Cada fila del array de ADN no puede ser null.
 
-## 🧰 Tecnologías utilizadas
+## 🧰 Tecnologías Implementadas
 - `H2` *(Base de datos en memoria para desarrollo ágil)*
 - `Postman` *(Herramienta para validar y probar API)*
 - `Java 17` *(Lenguaje de programación utilizado)*
@@ -62,7 +62,7 @@ Antes de realizar la detección, se llevan a cabo varias validaciones en la entr
 - `Swagger` *(Interfaz de documentación y pruebas de APIs)*
 - `Spring Boot` *(Framework para construir aplicaciones Java de forma rápida)*
 - `Render` *(Plataforma para desplegar aplicaciones en la nube)*
-
+- `Gradle` *(Herramienta de automatización de construcción)*
 
 ## 🌐 Deploy Render
 <p align="center">

@@ -128,7 +128,7 @@ Puedes hacer una consulta a la API para obtener estadísticas sobre las secuenci
 
 ## 🟢 Swagger UI 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/swagger-api/swagger.io/wordpress/images/assets/SWE-logo-clr.png" alt="Postman Logo" width="500"/>
+  <img src="https://raw.githubusercontent.com/swagger-api/swagger.io/wordpress/images/assets/SWE-logo-clr.png" alt="Postman Logo" width="600"/>
 </p>
 
 Puedes interactuar directamente con la API sin necesidad de usar herramientas como Postman, utilizando la interfaz de Swagger.

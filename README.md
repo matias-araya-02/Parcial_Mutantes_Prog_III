@@ -143,7 +143,7 @@ Swagger te proporciona una documentación interactiva de la API donde puedes rea
 Esto facilita el probar y entender las funcionalidades de la API sin configuraciones adicionales.
 
 
-## 🟠 Pruebas en Postman 
+## 🟠Postman 
 
 <p align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Postman_%28software%29.png" alt="Postman Logo" width="400"/>

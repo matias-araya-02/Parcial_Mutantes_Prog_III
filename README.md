@@ -53,15 +53,16 @@ Antes de realizar la detección, se llevan a cabo varias validaciones en la entr
 
 ## 🧰 Tecnologías utilizadas
 
-- **Java 17** *(Desarrollo con IntelliJ IDEA)*
-- **Gradle** *(Gestor de dependencias)*
-- **Spring Boot** *(Framework backend)*
-- **H2** *(Base de datos embebida)*
-- **Postman** *(Cliente para pruebas de API)*
-- **JUnit** *(Pruebas unitarias)*
-- **Render** *(Despliegue en la nube de la API)*
-- **Docker Desktop** *(Deploy contenedor)*
-- **Swagger** *(Documentación interactiva de APIs)*
+- **Docker Desktop** *(Gestión de contenedores para el despliegue)*
+- **H2** *(Base de datos en memoria para desarrollo ágil)*
+- **Postman** *(Herramienta para validar y probar API)*
+- **Java 17** *(Lenguaje de programación utilizado)*
+- **JUnit** *(Framework para realizar pruebas unitarias)*
+- **Swagger** *(Interfaz de documentación y pruebas de APIs)*
+- **Spring Boot** *(Framework para construir aplicaciones Java de forma rápida)*
+- **Gradle** *(Herramienta para automatización de compilaciones y gestión de dependencias)*
+- **Render** *(Plataforma para desplegar aplicaciones en la nube)*
+
 
 ## 🌐 Deploy Render
 <p align="center">

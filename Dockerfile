@@ -1,6 +1,6 @@
 #Base image for metadata
 FROM ubuntu:latest
-LABEL authors="Matia_Araya"
+LABEL authors="Matias_Araya"
 
 #Build stage
 FROM alpine:latest as build

@@ -154,7 +154,7 @@ Permite enviar un JSON con una secuencia de ADN y recibe como respuesta un estad
 
 Además, permite obtener estadísticas `/stats` sobre las verificaciones realizadas. Estas estadísticas incluyen el número de secuencias mutantes, el número de secuencias humanas y la proporción entre ambas.
 
-### 📝 Cómo realizar una consulta POST en Postman
+### 📝 Cómo realizar una consulta POST
 
 #### Paso 1: Crear una nueva solicitud
 - Haz clic en el botón `New` o en el icono de `"+"` para abrir una nueva pestaña de solicitud.
@@ -246,7 +246,7 @@ Response Body:
 }
 ```
 #
-### 📝 Cómo realizar una consulta GET en Postman
+### 📝 Cómo realizar una consulta GET
 
 #### Paso 1: Crear una nueva solicitud
 - Haz clic en el botón `New` o en el icono de `"+"` para abrir una nueva pestaña de solicitud.

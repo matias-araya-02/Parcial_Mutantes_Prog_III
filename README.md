@@ -1,6 +1,8 @@
-# ADN HUMANUTANTE 🧬
+# ADN HUMANUTANTE 🧬☣️
 
-Este proyecto es una aplicación Spring Boot que determina si una secuencia de ADN pertenece a un ser humano o a un mutante, utilizando un análisis de las secuencias de ADN en formato de matriz.
+Este proyecto detecta si una secuencia de ADN corresponde a un **humano** o un **mutante** mediante el análisis de patrones genéticos. La secuancias de ADN se reciben en formato JSON, se valida y determina si contienen al menos **dos secuencias de cuatro letras iguales consecutivas** en cualquier dirección (horizontal, vertical o diagonal), lo que indicaría que es mutante.
+
+Las secuencias válidas se almacenan en una base de datos **H2**, junto con un indicador de si son humanas o mutantes. Además, el proyecto proporciona estadísticas sobre el número de secuencias mutantes y humanas y su proporción, todo gestionado a través de una API REST.
 
 ## 🖥️ Instalación Local
 
@@ -45,23 +47,21 @@ Un ADN es considerado mutante si contiene **más de una** secuencia repetitiva e
 
 Antes de realizar la detección, se llevan a cabo varias validaciones en la entrada:
 
+- El array de ADN debe ser NxN (las mismas dimensiones en filas y columnas).
+- El array de ADN debe tener un tamaño mínimo de 4x4.
+- Cada fila del array de ADN solo puede contener los caracteres 'A', 'T', 'C' y 'G'.
 - El array de ADN no puede ser null.
 - El array de ADN no puede estar vacío.
 - Cada fila del array de ADN no puede ser null.
-- El array de ADN debe ser NxN (las mismas dimensiones en filas y columnas).
-- Cada fila del array de ADN solo puede contener los caracteres 'A', 'T', 'C' y 'G'.
 
 ## 🧰 Tecnologías utilizadas
-
-- **Docker Desktop** *(Gestión de contenedores para el despliegue)*
-- **H2** *(Base de datos en memoria para desarrollo ágil)*
-- **Postman** *(Herramienta para validar y probar API)*
-- **Java 17** *(Lenguaje de programación utilizado)*
-- **JUnit** *(Framework para realizar pruebas unitarias)*
-- **Swagger** *(Interfaz de documentación y pruebas de APIs)*
-- **Spring Boot** *(Framework para construir aplicaciones Java de forma rápida)*
-- **Gradle** *(Herramienta para automatización de compilaciones y gestión de dependencias)*
-- **Render** *(Plataforma para desplegar aplicaciones en la nube)*
+- `H2` *(Base de datos en memoria para desarrollo ágil)*
+- `Postman` *(Herramienta para validar y probar API)*
+- `Java 17` *(Lenguaje de programación utilizado)*
+- `JUnit` *(Framework para realizar pruebas unitarias)*
+- `Swagger` *(Interfaz de documentación y pruebas de APIs)*
+- `Spring Boot` *(Framework para construir aplicaciones Java de forma rápida)*
+- `Render` *(Plataforma para desplegar aplicaciones en la nube)*
 
 
 ## 🌐 Deploy Render
@@ -85,6 +85,7 @@ Aunque más adelante se explicarán en detalle las consultas con Postman, ya pue
 1. **Método:** `POST`
 2. **URL:** [https://parcial-mutantes-prog-iii.onrender.com/mutant](https://parcial-mutantes-prog-iii.onrender.com/mutant)
 3. **Body:** El cuerpo de la solicitud debe ser enviado en formato JSON, con una secuencia de ADN como en el siguiente ejemplo:
+4. **Send:** Haz click en `Send` para enviar la solicitud.
 
  ```json
 {
@@ -113,16 +114,16 @@ Puedes hacer una consulta a la API para obtener estadísticas sobre las secuenci
 
 ### Cómo hacer una solicitud:
 1. **Método:** `GET`
-2. **URL:** [https://parcial-mutantes-prog-iii.onrender.com/stats](https://parcial-mutantes-prog-iii.onrender.com/stats)
-
-3. **Respuesta esperada:**
+2. **URL:** [https://parcial-mutantes-prog-iii.onrender.com/mutant/stats](https://parcial-mutantes-prog-iii.onrender.com/mutant/stats)
+3. **Send:** Haz click en `Send` para enviar la solicitud.
+4. **Respuesta esperada:**
    - La API devolverá un JSON con estadísticas sobre cuántas secuencias de ADN mutantes y humanas han sido verificadas, así como la proporción entre ambas. Un ejemplo de respuesta es:
 
 ```json
 {
-  "count_mutant_dna": 1,
-  "count_human_dna": 1,
-  "ratio": 1.0
+    "countMutantDna": 1,
+    "countHumanDna": 1,
+    "ratio": 1.0
 }
 ```
 
@@ -156,10 +157,10 @@ Además, permite obtener estadísticas `/stats` sobre las verificaciones realiza
 ### 📝 Cómo realizar una consulta POST en Postman
 
 #### Paso 1: Crear una nueva solicitud
-- Haz clic en el botón **New** o en el icono de **"+"** para abrir una nueva pestaña de solicitud.
+- Haz clic en el botón `New` o en el icono de `"+"` para abrir una nueva pestaña de solicitud.
 
 #### Paso 2: Seleccionar el tipo de solicitud
-- Selecciona el tipo de solicitud HTTP que deseas realizar. Para verificar si una secuencia de ADN es mutante, selecciona **POST** del menú desplegable.
+- Para verificar si una secuencia de ADN es mutante, selecciona `POST` del menú desplegable.
 
 #### Paso 3: Ingresar la URL
 - En el campo de URL, ingresa la dirección de tu API:
@@ -170,11 +171,11 @@ http://localhost:8080/mutant
 
 
 #### Paso 4: Configurar el cuerpo de la solicitud
-1. Haz clic en la pestaña **Body**.
-2. Selecciona la opción **raw**.
-3. Asegúrate de que el formato esté configurado en **JSON** (puedes seleccionar **JSON** desde el menú desplegable que aparece a la derecha).
-4. Ingresa el JSON (ADN MUTANTE O HUMANO)
-5. Haz clic en el botón **Send** para enviar la solicitud.
+1. Haz clic en la pestaña `Body`.
+2. Selecciona la opción `raw`.
+3. Asegúrate de que el formato esté configurado en `JSON` (puedes seleccionar **JSON** desde el menú desplegable que aparece a la derecha).
+4. Ingresa el JSON (ADN **MUTANTE** O **HUMANO**)
+5. Haz clic en el botón `Send` para enviar la solicitud.
 
 Ejemplo de ADN **MUTANTE**:
  ```json
@@ -248,10 +249,10 @@ Response Body:
 ### 📝 Cómo realizar una consulta GET en Postman
 
 #### Paso 1: Crear una nueva solicitud
-- Haz clic en el botón **New** o en el icono de **"+"** para abrir una nueva pestaña de solicitud.
+- Haz clic en el botón `New` o en el icono de `"+"` para abrir una nueva pestaña de solicitud.
   
 #### Paso 2: Seleccionar el tipo de solicitud
-- Selecciona el tipo de solicitud HTTP que deseas realizar. Para obtener las estadísticas de ADN, selecciona **GET** del menú desplegable.
+- Para obtener las estadísticas de ADN, selecciona `GET` del menú desplegable.
 
 #### Paso 3: Ingresar la URL
 - En el campo de URL, ingresa la dirección de tu API para obtener las estadísticas:
@@ -259,7 +260,7 @@ Response Body:
 http://localhost:8080/mutant/stats
 ```
 #### Paso 4: Enviar la solicitud
-- Haz clic en el botón **Send** para enviar la solicitud.
+- Haz clic en el botón `Send` para enviar la solicitud.
 
 Response Body:
 ```json
@@ -278,7 +279,7 @@ Response Body:
 
 ### Función de la Base de Datos H2 en el Proyecto
 
-La base de datos H2 en tu proyecto sirve como almacenamiento para las secuencias de ADN analizadas. Permite realizar consultas sobre si un ADN es humano o mutante y acumular estadísticas de estos análisis.
+La base de datos H2 sirve como almacenamiento para las secuencias de ADN analizadas. Permite realizar consultas sobre si un ADN es humano o mutante y acumular estadísticas de estos análisis.
 
 ### Estructura de la Tabla `Dna`
 
@@ -305,37 +306,38 @@ La tabla `Dna` tiene las siguientes columnas:
 
 ### ✅ Casos de Prueba
 
-- `testMutant1`: Verifica que una secuencia de ADN con múltiples secuencias repetitivas sea detectada como mutante.
-- `testMutant2`: Verifica otro caso de secuencia de ADN mutante.
-- `testMutant3`: Verifica un caso extremo donde todas las filas contienen la misma base nitrogenada.
-- `testNonMutant1`: Verifica que una secuencia de ADN sin suficientes secuencias repetitivas no sea detectada como mutante.
-- `testNonMutant2`: Verifica otro caso de secuencia de ADN no mutante.
-- `testMutant4`: Verifica un caso más complejo de secuencia de ADN mutante.
-- `testMutant5`: Verifica un caso adicional de secuencia de ADN mutante.
+- `testMutant1`: Verifica una secuencia de ADN mutante con secuencias repetitivas.
+- `testMutant2`: Otro caso de ADN mutante.
+- `testMutant3`: Casos extremos con bases nitrogenadas repetidas.
+- `testNonMutant1`: Verifica ADN no mutante.
+- `testNonMutant2`: Otro caso de ADN no mutante.
+- `testMutant4`: Un caso complejo de ADN mutante.
+- `testMutant5`: Un caso adicional de ADN mutante.
 
 ### ⚠️ Manejo de Errores
 
-- `testEmptyDna`: Verifica que se maneje correctamente una secuencia de ADN vacía.
-- `testNullDna`: Verifica que se maneje correctamente una secuencia de ADN nula.
-- `testAllNullDna`: Verifica que se maneje correctamente una secuencia de ADN con todos los valores nulos.
-- `testInvalidCharacters`: Verifica que se manejen correctamente los caracteres inválidos en la secuencia de ADN.
-- `testNotNxNMatrix`: Verifica que se maneje correctamente una secuencia de ADN que no es una matriz cuadrada.
+- `testEmptyDna`: Maneja ADN vacío.
+- `testNullDna`: Maneja ADN nulo.
+- `testAllNullDna`: Maneja todas las filas nulas.
+- `testInvalidCharacters`: Maneja caracteres inválidos.
+- `testNotNxNMatrix`: Maneja matriz no cuadrada.
 
 ### 🔍 Otros Casos de Prueba
 
-- `testRows`: Verifica una secuencia de ADN donde se encuentran secuencias repetitivas en las filas.
-- `testColumns`: Verifica una secuencia de ADN donde se encuentran secuencias repetitivas en las columnas.
-- `testMainDiagonals`: Verifica una secuencia de ADN donde se encuentran secuencias repetitivas en las diagonales principales.
-- `testSecondaryLeftDiagonals`: Verifica una secuencia de ADN donde se encuentran secuencias repetitivas en las diagonales secundarias izquierda.
-- `testSecondaryRightDiagonals`: Verifica una secuencia de ADN donde se encuentran secuencias repetitivas en las diagonales secundarias derecha.
-- `testTertiaryLeftDiagonals`: Verifica una secuencia de ADN donde se encuentran secuencias repetitivas en las diagonales terciarias izquierda.
-- `testTertiaryRightDiagonals`: Verifica una secuencia de ADN donde se encuentran secuencias repetitivas en las diagonales terciarias derecha.
-- `testNonMutant`: Verifica que una secuencia de ADN no mutante sea correctamente identificada.
+- `testRows`: Secuencias repetitivas en filas.
+- `testColumns`: Secuencias repetitivas en columnas.
+- `testMainDiagonals`: Secuencias en diagonales principales.
+- `testSecondaryLeftDiagonals`: Secuencias en diagonales secundarias izquierda.
+- `testSecondaryRightDiagonals`: Secuencias en diagonales secundarias derecha.
+- `testTertiaryLeftDiagonals`: Secuencias en diagonales terciarias izquierda.
+- `testTertiaryRightDiagonals`: Secuencias en diagonales terciarias derecha.
+- `testNonMutant`: Identificación correcta de ADN no mutante.
 
 
 
-## 🧬 Pruebas unitarias
-- **Mutante 1**
+
+## 🔬 Pruebas unitarias
+- **Mutante 1**☣️
 ```json
 {
     "dna": [
@@ -346,7 +348,7 @@ La tabla `Dna` tiene las siguientes columnas:
     ]
 }
 ```
-- **Mutante 2**
+- **Mutante 2**☣️
 ```json
 {
     "dna": [
@@ -357,7 +359,7 @@ La tabla `Dna` tiene las siguientes columnas:
     ]
 }
 ```
-- **Mutante 3**
+- **Mutante 3**☣️
 ```json
 {
     "dna": [
@@ -368,7 +370,7 @@ La tabla `Dna` tiene las siguientes columnas:
     ]
 }
 ```
-- **Mutante 4**
+- **Mutante 4**☣️
 ```json
 {
     "dna": [
@@ -384,7 +386,7 @@ La tabla `Dna` tiene las siguientes columnas:
     ]
 }
 ```
-- **Mutante 5**
+- **Mutante 5**☣️
 ```json
 {
     "dna": [
@@ -401,7 +403,7 @@ La tabla `Dna` tiene las siguientes columnas:
 }
 ```
 
-- **Humano 1**
+- **Humano 1**🧬
 ```json
 {
     "dna": [
@@ -413,7 +415,7 @@ La tabla `Dna` tiene las siguientes columnas:
 }
 ```
 
-- **Humano 2**
+- **Humano 2**🧬
 ```json
 {
     "dna": [

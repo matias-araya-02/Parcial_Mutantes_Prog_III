@@ -284,7 +284,7 @@ public class MutantServiceTest {
 
     @Test
     public void testAllNullDna() {
-        String[] dna = {null, null, null, null};  // ADN con todos los valores nulos
+        String[] dna = {null, null, null, null};
         Mono<Boolean> result = mutantService.isMutant(dna);
         assertFalse(result.blockOptional().orElse(false));
     }
@@ -296,7 +296,7 @@ public class MutantServiceTest {
                 "ATGCGA",
                 "CAGTGC",
                 "TTATGT",
-                "AGA@GG",  // Carácter inválido
+                "AGA@GG",
                 "CCCCTA",
                 "TCACTG"
         };
@@ -308,7 +308,7 @@ public class MutantServiceTest {
     public void testNotNxNMatrix() {
         String[] dna = {
                 "ATGCGA",
-                "CAGT",    //No es una matriz cuadrada (NxN)
+                "CAGT", 
                 "TTATGT",
                 "AGAAGG",
                 "CCCCTA"

@@ -1,4 +1,4 @@
-# ADN Humano o Mutante
+# ADN HUMANUTANTE 🧬
 
 Este proyecto es una aplicación Spring Boot que determina si una secuencia de ADN pertenece a un ser humano o a un mutante, utilizando un análisis de las secuencias de ADN en formato de matriz.
 
@@ -51,7 +51,7 @@ Antes de realizar la detección, se llevan a cabo varias validaciones en la entr
 - El array de ADN debe ser NxN (las mismas dimensiones en filas y columnas).
 - Cada fila del array de ADN solo puede contener los caracteres 'A', 'T', 'C' y 'G'.
 
-## 🛠️ Tecnologías utilizadas
+## 🧰 Tecnologías utilizadas
 
 - **Java 17** *(Desarrollo con IntelliJ IDEA)*
 - **Gradle** *(Gestor de dependencias)*
@@ -59,9 +59,89 @@ Antes de realizar la detección, se llevan a cabo varias validaciones en la entr
 - **H2** *(Base de datos embebida)*
 - **Postman** *(Cliente para pruebas de API)*
 - **JUnit** *(Pruebas unitarias)*
+- **Render** *(Despliegue en la nube de la API)*
+- **Docker Desktop** *(Deploy contenedor)*
+- **Swagger** *(Documentación interactiva de APIs)*
+
+## 🌐 Deploy Render
+<p align="center">
+  <img src="https://cdn.sanity.io/images/34ent8ly/production/ec37a3660704e1fa2b4246c9a01ab34e145194ad-824x824.png" alt="Postman Logo" width="150"/>
+</p>
 
 
-## Pruebas Postman 
+El proyecto está desplegado en [Render](https://render.com), una plataforma de hosting en la nube. Puedes acceder al API a través del siguiente enlace:
+
+- [API de Mutantes](https://parcial-mutantes-prog-iii.onrender.com)
+
+Este despliegue permite enviar solicitudes HTTP al endpoint de la API para detectar si una secuencia de ADN es mutante o no.
+
+### 🟠 Consultas usando Postman
+
+Aunque más adelante se explicarán en detalle las consultas con Postman, ya puedes realizar consultas a través de la API de detección de mutantes.
+
+### Cómo hacer una solicitud:
+
+1. **Método:** `POST`
+2. **URL:** [https://parcial-mutantes-prog-iii.onrender.com/mutant](https://parcial-mutantes-prog-iii.onrender.com/mutant)
+3. **Body:** El cuerpo de la solicitud debe ser enviado en formato JSON, con una secuencia de ADN como en el siguiente ejemplo:
+
+ ```json
+{
+    "dna": [
+        "ATGCGA",
+        "CAGTGC",
+        "TTATGT",
+        "AGAAGG",
+        "CCCCTA",
+        "TCACTG"
+    ]
+}
+```
+Response Status (ADN Mutante):
+`200 OK`
+
+Response Body:
+```json
+{
+    "message": "Mutante 👽✌",
+    "mutant": 1
+}
+```
+#
+Puedes hacer una consulta a la API para obtener estadísticas sobre las secuencias de ADN que han sido analizadas.
+
+### Cómo hacer una solicitud:
+1. **Método:** `GET`
+2. **URL:** [https://parcial-mutantes-prog-iii.onrender.com/stats](https://parcial-mutantes-prog-iii.onrender.com/stats)
+
+3. **Respuesta esperada:**
+   - La API devolverá un JSON con estadísticas sobre cuántas secuencias de ADN mutantes y humanas han sido verificadas, así como la proporción entre ambas. Un ejemplo de respuesta es:
+
+```json
+{
+  "count_mutant_dna": 1,
+  "count_human_dna": 1,
+  "ratio": 1.0
+}
+```
+
+## 🟢 Swagger UI 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/swagger-api/swagger.io/wordpress/images/assets/SWE-logo-clr.png" alt="Postman Logo" width="500"/>
+</p>
+
+Puedes interactuar directamente con la API sin necesidad de usar herramientas como Postman, utilizando la interfaz de Swagger.
+
+### Cómo acceder:
+
+1. **URL:** [https://parcial-mutantes-prog-iii.onrender.com/swagger-ui.html](https://parcial-mutantes-prog-iii.onrender.com/swagger-ui.html)
+
+Swagger te proporciona una documentación interactiva de la API donde puedes realizar pruebas de las diferentes solicitudes (`GET`, `POST`, etc.) directamente desde el navegador. Solo necesitas ingresar los parámetros correspondientes, si aplica, y ejecutar la consulta.
+
+Esto facilita el probar y entender las funcionalidades de la API sin configuraciones adicionales.
+
+
+## 🟠 Pruebas en Postman 
 
 <p align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Postman_%28software%29.png" alt="Postman Logo" width="400"/>
@@ -74,16 +154,13 @@ Además, permite obtener estadísticas `/stats` sobre las verificaciones realiza
 
 ### 📝 Cómo realizar una consulta POST en Postman
 
-#### Paso 1: Abrir Postman
-- Inicia la aplicación Postman en tu computadora.
-
-#### Paso 2: Crear una nueva solicitud
+#### Paso 1: Crear una nueva solicitud
 - Haz clic en el botón **New** o en el icono de **"+"** para abrir una nueva pestaña de solicitud.
 
-#### Paso 3: Seleccionar el tipo de solicitud
+#### Paso 2: Seleccionar el tipo de solicitud
 - Selecciona el tipo de solicitud HTTP que deseas realizar. Para verificar si una secuencia de ADN es mutante, selecciona **POST** del menú desplegable.
 
-#### Paso 4: Ingresar la URL
+#### Paso 3: Ingresar la URL
 - En el campo de URL, ingresa la dirección de tu API:
 
 ```
@@ -91,7 +168,7 @@ http://localhost:8080/mutant
 ```
 
 
-#### Paso 5: Configurar el cuerpo de la solicitud
+#### Paso 4: Configurar el cuerpo de la solicitud
 1. Haz clic en la pestaña **Body**.
 2. Selecciona la opción **raw**.
 3. Asegúrate de que el formato esté configurado en **JSON** (puedes seleccionar **JSON** desde el menú desplegable que aparece a la derecha).

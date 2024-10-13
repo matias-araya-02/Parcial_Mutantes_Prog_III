@@ -31,7 +31,7 @@ http://localhost:8080/h2-console/
 - 📦 `src/main/java/com/example/mutantes/model/`: Paquete que contiene las clases de modelo, como Dna, Payload y Stat, que representan los datos de entrada y salida.
 - 🧪 `src/test/java/com/example/mutantes/`: Directorio que contiene las pruebas unitarias para validar la funcionalidad de la aplicación.
 
-## 🧠 Lógica de Detección
+## 🔍 Algoritmo de Detección
 
 La clase `MutantService` detecta si una secuencia de ADN pertenece a un mutante buscando patrones de cuatro bases genéticas consecutivas (A, T, C o G) en tres direcciones:
 

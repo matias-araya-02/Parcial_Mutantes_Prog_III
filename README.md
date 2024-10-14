@@ -5,7 +5,7 @@ Este proyecto detecta si una secuencia de ADN corresponde a un **humano** o un *
 Las secuencias válidas se almacenan en una base de datos **H2**, junto con un indicador de si son humanas o mutantes. Además, el proyecto proporciona estadísticas sobre el número de secuencias mutantes y humanas y su proporción, todo gestionado a través de una API REST.
 
 ## 📄 Documentación PDF (Flujo Temporal/Estructura del Sistema)
-- [Documentación](https://drive.google.com/file/d/1pb8Rjch7ynMzAH1iUwToO9rxl-T4NdVR/view?usp=sharing)
+- [Documentación](https://drive.google.com/file/d/1z7E1b243wekq8klRFQT4Def0krm4hMeG/view?usp=sharing)
 
 ## 🖥️ Instalación Local
 

@@ -172,7 +172,7 @@ Además, permite obtener estadísticas `/stats` sobre las verificaciones realiza
 - Para verificar si una secuencia de ADN es mutante, selecciona `POST` del menú desplegable.
 
 #### Paso 3: Ingresar la URL
-- En el campo de URL, ingresa la dirección de tu API:
+- En el campo de URL, ingresa la siguiente dirección:
 
 ```
 http://localhost:8080/mutant
@@ -264,7 +264,7 @@ Response Body:
 - Para obtener las estadísticas de ADN, selecciona `GET` del menú desplegable.
 
 #### Paso 3: Ingresar la URL
-- En el campo de URL, ingresa la dirección de tu API para obtener las estadísticas:
+- En el campo de URL, ingresa la siguiente dirección para obtener las estadísticas:
 ```
 http://localhost:8080/mutant/stats
 ```
